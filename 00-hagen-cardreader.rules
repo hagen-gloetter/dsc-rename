@@ -1,0 +1,15 @@
+
+# lsusb 
+# lsusb -a
+
+#does the trick
+ #/etc/init.d/boot.udev restart
+
+#USB-Einbauteil
+BUS=="usb", KERNEL=="sd?1", SYSFS{idVendor}=="1307", SYMLINK+="sdcard", RUN+="/srv/udev/sdcard.sh"
+
+#Hama Card Reader
+BUS=="usb", KERNEL=="sd?1", SYSFS{idVendor}=="0dda", SYMLINK+="sdcard", RUN+="/srv/udev/sdcard.sh"
+
+#MSI Card Reader
+BUS=="usb", KERNEL=="sd?1", SYSFS{idVendor}=="04cf", SYMLINK+="sdcard", RUN+="/srv/udev/sdcard.sh"
