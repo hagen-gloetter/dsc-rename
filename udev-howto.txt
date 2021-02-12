@@ -1,0 +1,70 @@
+   21  cd /etc/udev/rules.d/
+   23  cd /lib/udev/rules.d/
+   29  less udev.conf 
+   30  lsudev
+   31  lsusb -l
+   32  lsusb 
+   33  lsusb -v
+   36  cd /etc/udev/rules.d/
+   41  udevinfo -a -p `udevinfo -q path -n /dev/sdb` | grep ATTRS{serial}
+   42  udevinfo -a -p `udevinfo -q path -n /dev/sdd`
+   43  udevinfo -a -p #udevinfo -q path -n /dev/sdd`
+   44  udevinfo -a -p 
+   45  udevinfo -q path -n /dev/sdd`
+   46  udevinfo -a 
+   47  udevinfo 
+   49  lsusb -v
+   53  tail -f /var/log/messages 
+   54  lsusb -v
+   56  service udev restart
+   57  /etc/init.d/boot.udev restart
+   64  tail -f /var/log/messages 
+   66  mkdir -p /media/sdcard
+   67  chmod 777 /media/sdcard/
+   71  /etc/init.d/boot.udev restart
+   77  chmod 666 00-hagen-cardreader.rules 
+   78  tail -f /var/log/messages 
+   82  mkdir udev
+   93  cd /srv/udev/
+   87  vi sdcard.sh
+   90  chown hagen.users udev/
+   91  chmod 775 udev/
+   95  chmod 755 sdcard.sh 
+   99  cd /etc/udev/rules.d/
+  101  vi 00-hagen-cardreader.rules
+  102  /srv/udev/sdcard.sh
+  103  less /srv/udev/sdcard.sh
+  104  /srv/udev/sdcard.sh
+  105  ls -l /srv/udev/sdcard.sh
+  106  chown 755 /srv/udev/sdcard.sh
+  107  /srv/udev/sdcard.sh
+  108  ls -l /srv/udev/sdcard.sh
+  109  chown 755 /srv/udev/sdcard.sh 
+  111  chown hagen.root /srv/udev/sdcard.sh 
+  112  /srv/udev/sdcard.sh
+  113  ls -l /dev/sdcard 
+  114  cd /dev/sdcard
+  115  ls -l /dev/sdcard
+  116  lsusb -v /srv/usb.txt
+  117  lsusb -v > /srv/usb.txt
+  143  less 00-hagen-cardreader.rules 
+  144  less /srv/udev/sdcard.sh 
+  146  mkdir -p /daten/DigiCam/transfer
+  147  mkdir -p /daten/DigiCam/ablage
+  148  find . -name *jpg
+  154  cd /daten/DigiCam/transfer/
+  155  mkdir -p /daten/DigiCam/transfer/
+  156  chown hagen.root /daten/DigiCam/transfer/
+  157  chmod 775 /daten/DigiCam/transfer/
+  162  md5sum p1100271.jpg 
+  167  /usr/bin/xv  -display :0.0 /srv/udev/karte-wird-gelesen.jpg 
+  199  which xhost 
+  218  zypper up 
+  229  xv -display :0.0 /srv/udev/bitte-karte-einstecken.jpg 
+  230  xhost +localhost
+  271  cd /etc/udev/rules.d/
+  270  mv /etc/udev/rules.d/00-hagen-cardreader.rules .
+  272  mv /home/hagen/00-hagen-cardreader.rules /srv/udev/
+  277  chown hagen.root 00-hagen-cardreader.rules 
+  282  SciTE 00-hagen-cardreader.rules DigiCam/* &
+  301  rm 00-hagen-cardreader.rules 
