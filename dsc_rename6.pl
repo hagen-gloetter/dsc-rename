@@ -10,6 +10,9 @@
 # download http://www.sentex.net/~mwandel/jhead/
 #
 # sudo apt install libimage-exiftool-perl jhead
+# Ubuntu 22.04:
+# sudo apt-get -y install exiftran
+
 
 my $debug = 0;
 
