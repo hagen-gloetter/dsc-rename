@@ -68,6 +68,8 @@ push( @FileArray, glob( $pfad_quelle . "/*.PNG" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.png" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.tif" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.TIF" ) );
+push( @FileArray, glob( $pfad_quelle . "/*.HEIC" ) );
+push( @FileArray, glob( $pfad_quelle . "/*.heic" ) );
 @FileArray = sort(@FileArray);
 
 push( @FileArray, glob( $pfad_quelle . "/*.mov" ) );
