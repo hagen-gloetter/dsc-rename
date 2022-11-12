@@ -26,7 +26,7 @@ my $pfad_quelle = $ARGV[0];
 my $para2       = $ARGV[1];
 my $para3       = $ARGV[2];
 my %bildnummern = ();
-my $jhead       = "/usr/bin/jhead"   || die "jhead not found\nplease install\nsudo apt-get install jhead\n";
+my $jhead       = `which jhead`  || die "jhead not found\nplease install\nsudo apt-get install jhead\n";
 
 if ( defined $pfad_quelle and defined $para2 ) {
  print "Parameter Check passed\n;";
@@ -158,9 +158,10 @@ foreach my $fqfn (@FileArray) {
  }
 
  my $new_fn = "$CreateDate $prefix $Hersteller $Kamera $FNumber";
- $new_fn =~ s/\s+/-/g;
- $new_fn =~ s/,/-/g;
- $new_fn =~ s/-+/-/g;
+ $new_fn =~ s/\s+/-/mg;
+ $new_fn =~ s/,/-/mg;
+ $new_fn =~ s/-+/-/mg;
+ $new_fn =~ s#/#-#mg;
 
  print "$i/$count ";
  if ( $fqfn =~ /$pfad_ziel\/$new_fn$ext/ ) {
