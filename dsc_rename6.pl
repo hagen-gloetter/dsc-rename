@@ -174,7 +174,8 @@ foreach my $fqfn (@FileArray) {
   print "rename $fqfn -> $pfad_ziel/$new_fn$ext" if ( $debug > 2 );
   if ( rename( "$fqfn", "$pfad_ziel/$new_fn$ext" ) ) {
    my $ret = "";
-   $ret = `$jhead -autorot $pfad_ziel/$new_fn$ext` if ( $ext =~ /jpg/i );
+   $cmd="$jhead -autorot $pfad_ziel/$new_fn$ext"
+   $ret = `$cmd` if ( $ext =~ /jpg/i );
    print " rotated" if ( $ret =~ /Modified:/ );
    print " -> ok\n";
   }
