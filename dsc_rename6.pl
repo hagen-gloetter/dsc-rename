@@ -26,18 +26,21 @@ my $pfad_quelle = $ARGV[0];
 my $para2       = $ARGV[1];
 my $para3       = $ARGV[2];
 my %bildnummern = ();
-my $jhead       = `which jhead`  || die "jhead not found\nplease install\nsudo apt-get install jhead\n";
-
+my $jhead       = `which jhead` ; 
+if ($? != 0) {
+    die "jhead not found\nplease install\nsudo apt-get install jhead\n" ;
+}
+chomp ($jhead); # remove linebreak
 if ( defined $pfad_quelle and defined $para2 ) {
- print "Parameter Check passed\n;";
+    print "Parameter Check passed\n;";
 }
 else {
- print "usage1 rename: $0 pfad prefix\n";
- print "usage2 rename and move: $0 quellpfad zielpfad prefix\n";
- print "example:\n";
- print "$0 /daten/DigiCam/neue_Bilder Urlaub\n";
- print "$0 /daten/DigiCam/neue_Bilder /daten/DigiCam/Urlaubs_Bilder/ Urlaub\n";
- exit;
+    print "usage1 rename: $0 pfad prefix\n";
+    print "usage2 rename and move: $0 quellpfad zielpfad prefix\n";
+    print "example:\n";
+    print "$0 /daten/DigiCam/neue_Bilder Urlaub\n";
+    print "$0 /daten/DigiCam/neue_Bilder /daten/DigiCam/Urlaubs_Bilder/ Urlaub\n";
+    exit;
 }
 
 my $pfad_ziel = $para2;
@@ -45,9 +48,9 @@ my $prefix    = $para3;
 
 if ( !defined $para3 ) {
 
- # 2 Parameter Modus
- $prefix    = $para2;
- $pfad_ziel = $pfad_quelle;
+# 2 Parameter Modus
+    $prefix    = $para2;
+    $pfad_ziel = $pfad_quelle;
 }
 
 $pfad_quelle = dirname("$pfad_quelle/.");
@@ -175,7 +178,7 @@ foreach my $fqfn (@FileArray) {
   if ( rename( "$fqfn", "$pfad_ziel/$new_fn$ext" ) ) {
    my $ret = "";
    my $cmd="";
-   $cmd="$jhead -autorot $pfad_ziel/$new_fn$ext";
+   $cmd="$jhead -autorot \"$pfad_ziel/$new_fn$ext\" ";
    $ret = `$cmd` if ( $ext =~ /jpg/i );
    print " rotated" if ( $ret =~ /Modified:/ );
    print " -> ok\n";
