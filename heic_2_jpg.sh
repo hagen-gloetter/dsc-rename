@@ -7,3 +7,4 @@
 #magick mogrify -monitor -format jpg *.HEIC
 #mogrify -format jpg *.HEIC
 mogrify -verbose -format jpg *.HEIC
+mogrify -verbose -format jpg *.heic
