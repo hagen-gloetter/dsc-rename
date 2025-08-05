@@ -9,10 +9,16 @@
 # jhead -> http://www.linux-community.de/Internal/Artikel/Print-Artikel/LinuxUser/2005/10/JPEG-Bilder-automatisch-umbenennen-und-verlustlos-bearbeiten/(article_body_offset)/2
 # download http://www.sentex.net/~mwandel/jhead/
 #
+# Unter Ubuntu:
 # sudo apt install libimage-exiftool-perl jhead  libjpeg-progs
 # Ubuntu 22.04:
 # sudo apt-get -y install exiftran
-
+#
+# Auf dem Mac:
+# brew install perl
+# Terminal nez starten
+# which perl -> muss auf homebrew pfad zeigen
+# cpan Image::ExifTool
 
 my $debug = 0;
 
