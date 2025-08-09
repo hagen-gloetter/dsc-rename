@@ -9,8 +9,13 @@
 # jhead -> http://www.linux-community.de/Internal/Artikel/Print-Artikel/LinuxUser/2005/10/JPEG-Bilder-automatisch-umbenennen-und-verlustlos-bearbeiten/(article_body_offset)/2
 # download http://www.sentex.net/~mwandel/jhead/
 #
+<<<<<<< Updated upstream
 # Unter Ubuntu:
 # sudo apt install libimage-exiftool-perl jhead  libjpeg-progs
+=======
+# sudo apt install libimage-exiftool-perl jhead  libjpeg-progs make
+# sudo cpan Image::ExifTool
+>>>>>>> Stashed changes
 # Ubuntu 22.04:
 # sudo apt-get -y install exiftran
 #
@@ -79,6 +84,7 @@ push( @FileArray, glob( $pfad_quelle . "/*.tif" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.TIF" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.HEIC" ) );
 push( @FileArray, glob( $pfad_quelle . "/*.heic" ) );
+push( @FileArray, glob( $pfad_quelle . "/*.RW2" ) );
 @FileArray = sort(@FileArray);
 
 push( @FileArray, glob( $pfad_quelle . "/*.mov" ) );
